@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: 'Archivo', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.register-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.register-left {
+    flex: 0.4; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 60px 40px 60px 60px; 
+    background: #FFFFFF;
+    min-width: 450px; 
+}
+
+.register-right {
+    flex: 1; 
+    background: url('./media/slide-1/most.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh; 
+}
+
+
+.register-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./media/slide-1/12.jpg') center/cover no-repeat;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 380px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.6s ease forwards;
+    margin-left: 0; 
+}
+
+.register-header {
+    text-align: left; 
+    margin-bottom: 40px;
+}
+
+.register-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.register-logo img {
+    height: 32px;
+    width: auto;
+}
+
+.register-logo-text {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.register-title {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1C1C1C;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    text-align: left; 
+}
+
+.register-subtitle {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #A8A8A8;
+    line-height: 1.5;
+    text-align: left; 
+}
+
+.register-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1C1C1C;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.form-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    color: #1C1C1C;
+    background-color: #FFFFFF;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-input::placeholder {
+    color: #A8A8A8;
+    opacity: 0.7;
+}
+
+.form-input:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.register-button {
+    width: 100%;
+    height: 50px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #872BFF;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.register-button:hover {
+    transform: translateY(-2px);
+    background-color: #7a25f0;
+    box-shadow: 0 4px 12px rgba(135, 43, 255, 0.3);
+}
+
+.register-button:active {
+    transform: translateY(0);
+}
+
+.login-link {
+    text-align: left;
+    margin-top: 25px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    color: #A8A8A8;
+}
+
+.login-link a {
+    color: #872BFF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    margin-left: 5px;
+}
+
+.login-link a:hover {
+    color: #F411CF;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.message {
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.message.error {
+    background-color: rgba(244, 17, 207, 0.1);
+    color: #F411CF;
+    border: 1px solid rgba(244, 17, 207, 0.2);
+}
+
+.message.success {
+    background-color: rgba(135, 43, 255, 0.1);
+    color: #872BFF;
+    border: 1px solid rgba(135, 43, 255, 0.2);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .register-wrapper {
+        flex-direction: column;
+    }
+    
+    .register-left {
+        flex: 1;
+        padding: 30px 20px;
+        min-width: auto;
+        width: 100%;
+        justify-content: center; 
+    }
+    
+    .register-right {
+        height: 400px; 
+        flex: none;
+        order: -1; 
+        width: 100%;
+    }
+    
+    .register-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .register-header,
+    .register-title,
+    .register-subtitle,
+    .form-label,
+    .login-link {
+        text-align: center; 
+    }
+    
+    .register-title {
+        font-size: 28px;
+    }
+    
+    .register-logo-text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-left {
+        padding: 20px 15px;
+    }
+    
+    .register-right {
+        height: 300px;
+    }
+    
+    .register-title {
+        font-size: 24px;
+    }
+    
+    .register-subtitle {
+        font-size: 14px;
+    }
+    
+    .form-input {
+        height: 45px;
+        font-size: 13px;
+    }
+    
+    .register-button {
+        height: 45px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .register-left {
+        flex: 0.35; 
+        padding: 80px 60px 80px 80px;
+    }
+    
+    .register-right {
+        flex: 1; 
+    }
+}
