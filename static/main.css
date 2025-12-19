@@ -12,6 +12,40 @@ body {
     padding: 0;
 }
 
+.body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(135, 43, 255, 0.15) 0%, transparent 35%),
+        radial-gradient(circle at 100% 100%, rgba(135, 43, 255, 0.15) 0%, transparent 35%),
+        url('./static/media/slide-1/e.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.e {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(135, 43, 255, 0.15) 0%, transparent 35%),
+        radial-gradient(circle at 100% 100%, rgba(135, 43, 255, 0.15) 0%, transparent 35%),
+        url('./static/media/slide-1/e.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .slide-1 {
     padding: 20px;
     padding-top: 47px;
@@ -86,7 +120,8 @@ body {
 }
 
 
-.login, .sign-in {
+
+.login, .sign-up {
     width: 120px;
     font-family: "Plus Jakarta Sans", sans-serif;
     height: 50px;
@@ -98,22 +133,22 @@ body {
     border: none;
     outline: none;
     border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex; 
     align-items: center; 
     justify-content: center;
 }
-.sign-in {
+.sign-up {
     background-color: #872BFF;
     color: white;
     transition: all 0.3s ease-in-out;
 }
 
-.sign-in:hover {
+.sign-up:hover {
     transform: scale(1.05);
     background-color: white;
     color: black;
-    box-shadow: 0 4px 12px rgba(27, 112, 241, 0.3);
-
+    box-shadow: 0 8px 20px rgba(135, 43, 255, 0.3)
 }
 
 .login {
@@ -124,7 +159,190 @@ body {
     transform: scale(1.05);
     background-color: #872BFF;
     color: white;
-    box-shadow: 0 4px 12px rgba(3, 3, 3, 0.3);
+    box-shadow: 0 8px 20px rgba(135, 43, 255, 0.3)
+    
+}
+
+.container-main {
+    max-width: 1200px;
+    margin: 110px auto 0 auto;
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+    
+    align-items: flex-start;
+}
+
+.badge {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #F411CF;
+    width: 219px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 8px;
+    
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.vec {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.asia-heading {
+    margin-top: 36px;
+    line-height: 0.8; 
+}
+
+.asia {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 70px;
+    font-weight: 600;
+    color: #1C1C1C;
+    margin: 0; 
+    padding: 0;
+    display: block;
+    line-height: 1.4;
+    
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease forwards;
+    animation-delay: 0.6s; 
+}
+
+.asia-2 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 70px;
+    font-weight: 600;
+    color: #F411CF;
+    margin: 0; 
+    padding: 0;
+    line-height: 1.4;
+    display: block;
+    
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease forwards;
+    animation-delay: 0.9s; 
+}
+
+.container-stay {
+    margin-top: 36px;
+    line-height: 0.8;
+}
+
+.stay {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #A8A8A8;
+    line-height: 1.4;
+    
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 0.6s ease forwards;
+    animation-delay: 1.4s;
+}
+
+.container-button-get {
+    margin-top: 36px;
+    line-height: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.demo {
+    width: 145px;
+    height: 50px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.6s ease forwards;
 
 }
 
+.demo:hover {
+    transform: scale(1.05) translateX(0); 
+    background-color: #872BFF;
+    color: white;
+    box-shadow: 0 8px 20px rgba(135, 43, 255, 0.3)
+}
+
+.get-started {
+    width: 145px;
+    height: 50px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #872BFF;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 1.8s; 
+}
+
+.get-started:hover {
+    transform: scale(1.05) translateY(0); 
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 20px rgba(135, 43, 255, 0.3)
+}
+
+.stay, .get-started {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
