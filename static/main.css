@@ -569,3 +569,117 @@ body {
     top: -480px;
     left: -70px;
 }
+
+.container-partners {
+    max-width: 1200px;
+    margin: 160px auto 0 auto;
+    display: flex;
+    padding: 10px 20px;
+    flex-direction: row;
+    gap: 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-services {
+    max-width: 1200px;
+    margin: 160px auto 0 auto;
+    padding-top: 5px;
+    align-items: center;
+    width: 100%;
+
+}
+
+.services {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 24px;
+    padding: 10px 20px;
+    font-weight: 700;
+    color: #F411CF;
+    letter-spacing: 0.3em; 
+    line-height: 1.2;
+    display: block;
+    margin-bottom: 10px; 
+}
+
+.using-travel {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 44px;
+    padding: 4px 20px;
+    font-weight: 700;
+    color: #1C1C1C;
+    display: block;
+}
+
+.container-cards {
+    max-width: 1200px;
+    margin: 70px auto 0 auto;
+    display: flex;
+    justify-content: center; 
+    padding: 10px 20px;
+    gap: 30px;
+}
+
+.card-1, .card-2, .card-3 {
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    width: 350px;
+    height: 450px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    padding-top: 77.5px; 
+    transition: all 0.3s ease-in-out;
+    position: relative; 
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+}
+
+.card-2 {
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    width: 254px;
+    height: 450px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    padding-top: 77.5px; 
+    transition: all 0.3s ease-in-out;
+    position: relative; 
+    box-sizing: border-box; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-1:hover,
+.card-2:hover,
+.card-3:hover {
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    background-color: #FFFFFF;
+}
+
+.card1-img, .card2-img, .card3-img {
+    max-width: 80%; 
+    max-height: 200px; 
+    object-fit: contain; 
+}
+
+.title-card-1, .title-card-2, .title-card-3 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1C1C1C;
+    margin-top: 72px; 
+    width: 100%;
+    text-align: center;
+    padding: 0 20px; 
+}
+
+.desc-card-1, .desc-card-2, .desc-card-3 {
+    color: #A8A8A8;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
