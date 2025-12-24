@@ -10,11 +10,11 @@ import (
 
 func CreateUser(user *models.User) error {
 	query := `
-			INSERT INTO users (username, email, password)
-			VALUES (?, ?, ?)
+			INSERT INTO users (username, email, password, role)
+			VALUES (?, ?, ?, ?)
 		`
 
-	_, err := database.DB.Exec(query, user.Username, user.Email, user.Password)
+	_, err := database.DB.Exec(query, user.Username, user.Email, user.Password, user.Role)
 	if err != nil {
 		return err
 	}
@@ -24,14 +24,14 @@ func CreateUser(user *models.User) error {
 
 func GetUserByID(id int) (*models.User, error) {
 	query := `
-        SELECT id, username, email, password
+        SELECT id, username, email, password, role
         FROM users
         WHERE id = ?
     `
 
 	row := database.DB.QueryRow(query, id)
 	var user models.User
-	err := row.Scan(&user.ID, &user.Username, &user.Email, &user.Password)
+	err := row.Scan(&user.ID, &user.Username, &user.Email, &user.Password, &user.Role)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, errors.New("User not found")
@@ -44,7 +44,7 @@ func GetUserByID(id int) (*models.User, error) {
 
 func GetUserByUsername(username string) (*models.User, error) {
 	query := `
-			SELECT id, username, email, password
+			SELECT id, username, email, password, role
 			FROM users
 			WHERE username = ?
 		`
@@ -52,7 +52,7 @@ func GetUserByUsername(username string) (*models.User, error) {
 	row := database.DB.QueryRow(query, username)
 
 	var user models.User
-	err := row.Scan(&user.ID, &user.Username, &user.Email, &user.Password)
+	err := row.Scan(&user.ID, &user.Username, &user.Email, &user.Password, &user.Role)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, errors.New("User not found")
@@ -65,14 +65,14 @@ func GetUserByUsername(username string) (*models.User, error) {
 
 func GetUserByEmail(email string) (*models.User, error) {
 	query := `
-			SELECT id, username, email, password
+			SELECT id, username, email, password, role
 			FROM users
 			WHERE email = ?
 		`
 
 	row := database.DB.QueryRow(query, email)
 	var user models.User
-	err := row.Scan(&user.ID, &user.Username, &user.Email, &user.Password)
+	err := row.Scan(&user.ID, &user.Username, &user.Email, &user.Password, &user.Role)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, errors.New("User not found")

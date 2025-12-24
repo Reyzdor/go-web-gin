@@ -81,6 +81,7 @@ func Register(c *gin.Context) {
 		Username: input.Username,
 		Email:    input.Email,
 		Password: string(hash),
+		Role:     "user",
 	}
 
 	if err := repository.CreateUser(user); err != nil {

@@ -63,6 +63,8 @@ func main() {
 	r.POST("/register", handlers.Register)
 	r.POST("/login", handlers.Login)
 	r.GET("/logout", handlers.Logout)
+	r.GET("/admin", handlers.AdminPage)
+	r.POST("/create-post", handlers.CreatePost)
 
 	r.Run()
 }
